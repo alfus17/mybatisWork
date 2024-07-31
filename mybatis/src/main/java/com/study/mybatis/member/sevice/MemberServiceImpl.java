@@ -17,10 +17,16 @@ public class MemberServiceImpl implements MemberService {
 		return checkid;
 	}
 
-	@Override
 	public int insertMember(Member m) {
-		// TODO Auto-generated method stub
-		return 0;
+		SqlSession sqlSession = Template.getSqlSession();
+		int result = mDao.insertMember(sqlSession, m);
+		
+		if(result > 0) {
+			sqlSession.commit();
+		}
+		
+		sqlSession.close();
+		return result;
 	}
 
 }
