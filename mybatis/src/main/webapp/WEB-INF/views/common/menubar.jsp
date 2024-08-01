@@ -37,13 +37,13 @@
 </style>
 </head>
 <body>
-    <h1 align="center">Welcom to MyBatis</h1>
+    <h1 align="center">Welcome to MyBatis</h1>
 
     <div class="login-area" align="right">
     	<c:choose>  		
     		<c:when test="${ empty loginUser }">
     			<!-- 로그인 전 -->
-		        <form action="" method="post">
+		        <form action="login.me" method="post">
 		            <table>
 		                <tr>
 		                    <td>아이디</td>
@@ -69,12 +69,12 @@
 			        <table>
 			            <tr>
 			                <td colspan="2">
-			                    <h3>xxx님 환영합니다</h3>
+			                    <h3>${ loginUser.userName }님 환영합니다</h3>
 			                </td>
 			            </tr>
 			            <tr>
 			                <td><a href="">마이페이지</a></td>
-			                <td><a href="">로그아웃</a></td>
+			                <td><a href="logout.me">로그아웃</a></td>
 			            </tr>
 			        </table>
 			    </div>
@@ -85,7 +85,7 @@
     <nav class="nav-area" align="center">
         <div class="menu">HOME</div>
         <div class="menu">공지사항</div>
-        <div class="menu">게시판</div>
+        <div class="menu" onclick="location.href='list.bo?nowPage=1'">게시판</div>
         <div class="menu">ETC</div>
     </nav>
 </body>
