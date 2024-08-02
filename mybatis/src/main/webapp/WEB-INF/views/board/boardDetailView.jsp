@@ -47,7 +47,8 @@
 		<br>
 		<table border="1">
 			<tr>
-				<form action="">
+			<!-- Todo 여기 파라미터값 제대로 보내줘야함   -->
+				<form action="Reply.bo?">
 					<th width="100">댓글작성</th>
 					<th width="400"><textarea cols="53" rows="3"></textarea></th>
 				<script type="text/javascript">
