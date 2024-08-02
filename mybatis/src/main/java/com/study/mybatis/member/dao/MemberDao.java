@@ -9,13 +9,11 @@ public class MemberDao {
 		return sqlSession.selectOne("memberMapper.checkId", userId);
 	}
 
-	public int insertMember(SqlSession sqlSession, Member m) {
-		
+	public int insertMember(SqlSession sqlSession, Member m) {		
 		return sqlSession.insert("memberMapper.insertMember", m);
 	}
 
 	public Member loginMember(SqlSession sqlSession, Member m) {
-		
-		return sqlSession.selectOne("memberMapper.loginMember" , m); //한행 가져오기 : selectOne
+		return sqlSession.selectOne("memberMapper.loginMember", m);
 	}
 }

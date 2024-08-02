@@ -4,10 +4,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Error Page</title>
 </head>
 <body>
 	<jsp:include page="menubar.jsp" />
-	<h1 align="center">${errorMsg }</h1>
+	<h1 align="center">${ errorMsg }</h1>
 </body>
 </html>

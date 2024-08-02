@@ -28,6 +28,7 @@
     }
     .menu:hover {
         background-color: gray;
+        cursor: pointer;
     }
    /*  menubar.jsp */
     .outer {
@@ -37,7 +38,7 @@
 </style>
 </head>
 <body>
-    <h1 align="center">Welcome to MyBatis</h1>
+    <h1 align="center">Welcom to MyBatis</h1>
 
     <div class="login-area" align="right">
     	<c:choose>  		
