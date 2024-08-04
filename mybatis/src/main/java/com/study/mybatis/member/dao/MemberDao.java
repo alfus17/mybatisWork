@@ -9,11 +9,14 @@ public class MemberDao {
 		return sqlSession.selectOne("memberMapper.checkId", userId);
 	}
 
-	public int insertMember(SqlSession sqlSession, Member m) {		
+	public int insertMember(SqlSession sqlSession, Member m) {
 		return sqlSession.insert("memberMapper.insertMember", m);
 	}
 
 	public Member loginMember(SqlSession sqlSession, Member m) {
-		return sqlSession.selectOne("memberMapper.loginMember", m);
+
+		Member m1 = sqlSession.selectOne("memberMapper.loginMember", m);
+
+		return m1;
 	}
 }

@@ -13,7 +13,7 @@ import com.study.mybatis.common.vo.PageInfo;
 
 public class BoardServiceImpl implements BoardService {
 	private BoardDao bDao = new BoardDao();
-	
+
 	@Override
 	public int selectTotalRecord() {
 		SqlSession sqlSession = Template.getSqlSession();
@@ -34,12 +34,19 @@ public class BoardServiceImpl implements BoardService {
 	public int increaseCount(int boardNo) {
 		SqlSession sqlSession = Template.getSqlSession();
 		int result = bDao.increaseCount(sqlSession, boardNo);
-		
-		if(result > 0) {
+
+		if (result > 0) {
 			sqlSession.commit();
 		}
-		
+
 		sqlSession.close();
+		return result;
+	}
+
+	public int countReply(int boardNo) {
+		SqlSession sqlSession = Template.getSqlSession();
+		int result = bDao.countReply(sqlSession, boardNo);
+		System.out.println("BoardServiceImpl_countReply_result: " + result);
 		return result;
 	}
 
@@ -75,9 +82,18 @@ public class BoardServiceImpl implements BoardService {
 		return list;
 	}
 
+	@Override
+	public int insertReply(Reply reply) {
+		SqlSession sqlSession = Template.getSqlSession();
+		int sqlResult = bDao.insertReply(sqlSession, reply);
+		System.out.println("insertReply_sqlResult" + sqlResult);
+
+		// sql insert가 정상적일 경우 커밋
+		if (sqlResult > 0) {
+			sqlSession.commit();
+		}
+
+		return sqlResult;
+	}
+
 }
-
-
-
-
-

@@ -17,6 +17,7 @@ public class BoardSearchController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		String keyField = request.getParameter("keyField");
 		String keyword = request.getParameter("keyword");
 		int nowPage = Integer.parseInt(request.getParameter("nowPage"));
