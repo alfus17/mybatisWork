@@ -40,9 +40,8 @@ public class BoardInsertReply extends HttpServlet {
 
 		if (result > 0) {
 //			request.setAttribute("replyflag", result);
-			// request.getRequestDispatcher("WEB-INF/views/board/boardDetailView.jsp").forward(request,
-			// response);
-			response.sendRedirect("WEB-INF/views/board/boardDetailView.jsp&replyflag=true");
+			 request.getRequestDispatcher("WEB-INF/views/board/boardDetailView.jsp").forward(request, response);
+//			response.sendRedirect("WEB-INF/views/board/boardDetailView.jsp&replyflag=true");
 		} else {
 			request.setAttribute("errorMsg", "댓글작성 실패");
 			request.getRequestDispatcher("WEB-INF/views/common/errorPage.jsp").forward(request, response);

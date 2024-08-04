@@ -94,6 +94,7 @@
 					success : function(data) {
 						console.log("ajax통신 성공");
 						console.log(window.location.pathname + "?replyflag=true");
+						location.reload();
 						//location.href = window.location.pathname + "?replyflag=true";
 					},
 					error : function() {
